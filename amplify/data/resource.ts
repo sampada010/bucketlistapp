@@ -1,5 +1,6 @@
 import { type ClientSchema, a, defineData } from '@aws-amplify/backend';
 
+
 const schema = a.schema({
   BucketItem: a
     .model({
@@ -10,7 +11,9 @@ const schema = a.schema({
     .authorization((allow) => [allow.owner()]),  // Restrict access to the owner
 });
 
+
 export type Schema = ClientSchema<typeof schema>;
+
 
 export const data = defineData({
   schema,
